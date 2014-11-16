@@ -1,0 +1,7 @@
+rem Description:	A method for forcing the OS to refresh certain system settings by re-reading the relevant registry keys. In particular for colour schemes or desktop backgrounds. So it meant that you could change e.g. the Windows desktop wallpaper by merging a .reg file into the registry and then executing UpdatePerUserSystemParameters from user32.dll to make it read and apply the changed entries.
+rem Usage:        N/A
+
+Set oShell = CreateObject("WScript.Shell")
+oShell.Run _
+"%windir%\System32\RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters", _
+1, True
